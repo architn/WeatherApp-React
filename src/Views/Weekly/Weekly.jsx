@@ -13,7 +13,7 @@ function Weekly() {
   // const [city, setCity] = useState();
 
   useEffect ( () =>{
-    const apikey = "7f1c925f79e3379a32d791dda024e866";
+    const apikey = "22db4fb44293088d1ce4e2081f2f11d4";
     const daysOfWeek =[
         'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
         ]
@@ -37,9 +37,12 @@ function Weekly() {
   }, [location, weather, dayOfWeek]);
 
   return (
-    <div className='container'>     
+    <div className='container'>
+      <br/><br/>     
       <div className='row'>
-      <br/>
+      
+      <h4>Weather conditions for {location}</h4>
+      <br/><br/> 
       {filteredWeather && filteredWeather.map((i, index) => 
                 <Card c key={index}
                 minTemp={ ((i.min_temp - 273.15)*1.8 + 32).toFixed(2)} 
@@ -48,7 +51,9 @@ function Weekly() {
                 icon={i.icon}
                 hour={i.hour}/>
             )}
+            
             </div>
+           
       </div>
   )
 }

@@ -3,6 +3,7 @@
     color: white;
     background-color: #282c34;
     border: 0.2px solid white;
+    border-radius: 10%;
 }
 
 #icon{
