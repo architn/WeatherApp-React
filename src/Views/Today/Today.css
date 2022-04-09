@@ -1,0 +1,10 @@
+body{
+    color: white;
+}
+
+#searchBar{
+    width: 500px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

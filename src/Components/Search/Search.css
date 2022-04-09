@@ -1,0 +1,13 @@
+#forecastSection{
+    background-color: #282c34;
+    border: 1px solid white;
+    margin-right: 30px;
+    width: 220px;
+    text-align: center;
+
+}
+
+#homePageForecast{
+    margin-top: 100px;
+    padding: 20px;
+}
