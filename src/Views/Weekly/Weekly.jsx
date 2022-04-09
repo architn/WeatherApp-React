@@ -2,6 +2,7 @@ import React from 'react'
 import{useParams} from 'react-router-dom';
 import { useState } from 'react'
 import Card from '../../Components/Card/Card';
+import { useEffect } from 'react'
 
 function Weekly() {
   const {location} = useParams();
@@ -11,8 +12,8 @@ function Weekly() {
   
   // const [city, setCity] = useState();
 
-  function apiCall(){
-    const apikey = "22db4fb44293088d1ce4e2081f2f11d4";
+  useEffect ( () =>{
+    const apikey = "7f1c925f79e3379a32d791dda024e866";
     const daysOfWeek =[
         'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
         ]
@@ -33,30 +34,21 @@ function Weekly() {
           .then(setFilteredWeather(weather.filter( w => 
             w.day.includes(dayOfWeek)
           )) )
-  }
-
-  console.log(filteredWeather)
-
-
+  }, [location, weather, dayOfWeek]);
 
   return (
-    <div className='container'>
-      {dayOfWeek != null ? <button id='weeklyW' className='btn btn-warning' onClick={apiCall}>View Weekly Weather</button>: null}
-     
+    <div className='container'>     
       <div className='row'>
-      <div className='col-2'>
-
-      </div>
-      </div>
+      <br/>
       {filteredWeather && filteredWeather.map((i, index) => 
-            (<div c key={index}>
-                <Card 
+                <Card c key={index}
                 minTemp={ ((i.min_temp - 273.15)*1.8 + 32).toFixed(2)} 
                 maxTemp={ ((i.max_temp - 273.15)*1.8 + 32).toFixed(2)} 
-                day={i.day.charAt(0).toUpperCase()+ i.day.slice(1)} 
+                day={i.day} 
                 icon={i.icon}
                 hour={i.hour}/>
-            </div>))}
+            )}
+            </div>
       </div>
   )
 }

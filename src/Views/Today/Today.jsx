@@ -15,7 +15,7 @@ function Today() {
   const [city, setCity] = useState();
 
   function apiCall(){
-    const apikey = "22db4fb44293088d1ce4e2081f2f11d4";
+    const apikey = "7f1c925f79e3379a32d791dda024e866";
     const daysOfWeek =[
         'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
         ]
@@ -53,8 +53,6 @@ function Today() {
                 icon={i.icon}
                 hour={i.hour}/>
  )}
-        
-        
       </div>
       <Routes>
       <Route path='/' element={<Search />}></Route>

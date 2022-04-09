@@ -6,3 +6,13 @@
     white-space: nowrap;
 
 }
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: bold;
+}
+
+.link:hover{
+    color: yellow;
+}

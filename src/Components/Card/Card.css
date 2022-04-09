@@ -2,8 +2,13 @@
 
     color: white;
     background-color: #282c34;
+    border: 0.2px solid white;
 }
 
 #icon{
     width: 80px;
+}
+
+.time{
+    font-weight: bold;
 }

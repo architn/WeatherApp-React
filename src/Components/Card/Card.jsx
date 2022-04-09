@@ -6,13 +6,13 @@ import '../Card/Card.css'
 function Card(props) {
   return (
     // add col-2 here
-      <div id='weatherCard' className="card">
+      <div id='weatherCard' className="col-2">
           <img src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`} alt="Card image cap" id='icon' />
     
-          <h5>{props.day}</h5>
-          <p>MAX TEMP: {props.maxTemp}&deg;F</p>
-          <p>MIN TEMP: {props.minTemp}&deg;F</p>
-          <p>TIME: {props.hour}:00</p>
+          <h5>{props.day.charAt(0).toUpperCase()+ props.day.slice(1)}</h5>
+          <p>Max Temp: {props.maxTemp}&deg;F</p>
+          <p>Min Temp: {props.minTemp}&deg;F</p>
+          <p className='time'>TIME: {props.hour}:00:00</p>
   </div>
   )
 }

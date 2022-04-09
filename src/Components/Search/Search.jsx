@@ -8,9 +8,8 @@ import Forecast from '../../Views/Forecast/Forecast';
 
 function Search() {
   const locationKey = "152909_PC"
-   const apiKey = "GPj678ULmuG9iSznqBPOMkIYnpvFJJS6"
+   const apiKey = "ThO7fupGSg13o7CnOJrUVJF1IH5iSpcI"
    const [weatherInfo, setWeatherInfo] = useState([])
-   
    const padNum = (num) => {
        const stringNum = num + '';
        const stringlen = stringNum.length;
@@ -25,8 +24,8 @@ function Search() {
 
    useEffect( () => {
     const daysOfWeek = [
-      'Sunday', 
-      'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+      'sunday', 
+      'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'
   ]
 
   fetch(
@@ -39,6 +38,7 @@ function Search() {
       max: df.Temperature.Maximum.Value,
       weatherKey: padNum(df.Day.Icon),
       weatherInfo: df.Day.IconPhrase,
+      place: "Boston",
       dayOfWeek: daysOfWeek[new Date(df.Date).getDay()],
      }
  } )))
@@ -51,7 +51,7 @@ function Search() {
             <div id='homePageForecast' className='row'>
             {weatherInfo && weatherInfo.map((i, index) => 
             (<div id='forecastSection' className='col-2' key={index}>
-                <Forecast min={i.min} max={i.max} weatherType={i.weatherInfo} weatherKey={i.weatherKey} dayOfWeek={i.dayOfWeek}/>
+                <Forecast min={i.min} max={i.max} weatherType={i.weatherInfo} weatherKey={i.weatherKey} dayOfWeek={i.dayOfWeek} loc={i.place}/>
                 <br/>
             </div>))}
             </div>
